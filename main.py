@@ -1,8 +1,10 @@
 from sensor.exception import SensorException
 import sys, os
+from sensor.logger import logging
 
 def test_exception():
     try:
+        logging.info("Here error comes which is divisible by zero")
         a=1/0
     except Exception as e:
         raise SensorException(e,sys)
